@@ -31,8 +31,8 @@ public class ObsAvd : MonoBehaviour
                 {
                     toTgt = quat * toTgt;
                 } while (Physics.Raycast(transform.position, toTgt, 1.5f));
-                var vel = toTgt.normalized * 0.5f;
-                MyDrone.SetVelcoty(vel);
+                var vel = toTgt.normalized;
+                MyDrone.SetVelcoty(vel * 0.5f);
                 Avoiding = true;
                 Debug.DrawRay(transform.position, vel, Color.red);
             }
